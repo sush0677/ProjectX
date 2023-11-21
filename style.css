@@ -111,32 +111,6 @@ nav a {
     height: 100px;
     margin-bottom: 20px;
 }
-/* form spacing */
-.form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
 /* Footer Styles */
 footer {
     background-color: #003366;
