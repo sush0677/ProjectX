@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open an Account - Your Bank</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <!-- Header content (same as other pages) -->
+    </header>
+
+    <section class="breadcrumbs">
+        <div class="container">
+            <p><a href="index.html">Home</a> &gt; Open an Account</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <h1>Open an Account</h1>
+            <p>Please fill in the following details to open your account:</p>
+
+            <form action="submit_account.php" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="designation">Designation:</label>
+                    <input type="text" id="designation" name="designation" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="national-id">National ID:</label>
+                    <input type="text" id="national-id" name="national-id" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="branch">Select Branch:</label>
+                    <select id="branch" name="branch" required>
+                        <option value="branch1">Branch 1</option>
+                        <option value="branch2">Branch 2</option>
+                        <option value="branch3">Branch 3</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Your Bank. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
