@@ -109,6 +109,20 @@
             </form>
         </div>
     </main>
+    <!-- Add this script at the end of your HTML body -->
+<script>
+    const form = document.querySelector('form');
+    const mobileInput = document.getElementById('mobile');
+
+    form.addEventListener('submit', (event) => {
+        const mobileValue = mobileInput.value;
+        if (!/^\d+$/.test(mobileValue)) {
+            event.preventDefault(); // Prevent form submission
+            alert('Mobile number should contain only digits.');
+        }
+    });
+</script>
+
 
     <footer>
         <div class="container">
