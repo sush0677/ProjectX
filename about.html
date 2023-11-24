@@ -3,33 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Bank - Welcome</title>
+    <title>About Us - Your Bank</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 <body>
     <header>
-        <nav>
-            <div class="container">
-                <div class="logo">
-                    <img src="bank-logo.png" alt="Your Bank Logo">
-                    <h1>Your Bank</h1>
-                </div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="accounts.html">Accounts</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </div>
-        </nav>
+        <!-- Header content (same as index.html) -->
     </header>
+
+    <section class="breadcrumbs">
+        <div class="container">
+            <p><a href="index.html">Home</a> > About Us</p>
+        </div>
+    </section>
 
     <main>
         <div class="container">
             <h1>About Your Bank</h1>
-            <p>At Your Bank, we are committed to providing top-notch banking services to our customers. Learn more about our history, mission, and values.</p>
+            <p>At Your Bank, we are committed to providing top-notch banking services. Learn more about our history, mission, and values.</p>
 
             <div class="mission-values">
                 <h2>Our Mission and Values</h2>
@@ -41,23 +32,32 @@
                 <h2>Our History</h2>
                 <p>Founded in 1990, Your Bank has been serving the banking needs of individuals and businesses in the UAE for over three decades. We have grown to become a trusted financial institution known for our commitment to excellence.</p>
             </div>
+
+            <!-- Additional Content -->
+            <div class="leadership-team">
+                <h2>Leadership Team</h2>
+                <!-- Team Members -->
+                <div class="team-member">
+                    <img src="ceo.jpg" alt="CEO">
+                    <h3>John Doe, CEO</h3>
+                    <p>John has been leading Your Bank since 2000, guiding us through significant growth and innovation.</p>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+
+            <div class="awards-recognition">
+                <h2>Awards & Recognition</h2>
+                <ul>
+                    <li>Best Bank in UAE - 2021</li>
+                    <li>Innovation in Banking - 2020</li>
+                    <!-- Add more awards as needed -->
+                </ul>
+            </div>
         </div>
     </main>
-    
-<footer>
-        <div class="container">
-            <p>&copy; 2023 Your Bank. All rights reserved.</p>
-        </div>
+
+    <footer>
+        <!-- Footer content -->
     </footer>
-<script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
-</script>
-    
-
 </body>
 </html>
