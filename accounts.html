@@ -6,6 +6,67 @@
     <title>Accounts - Your Bank</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+    <style>
+        /* Accounts Page Specific Styles */
+.account-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.account-card {
+    background: #006060;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-10px);
+}
+
+.account-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.account-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.account-content h2 {
+    color: #aadcd4;
+}
+
+.btn-primary, .btn-secondary, .btn-tertiary {
+    background-color: #004d4d;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-tertiary:hover {
+    background-color: #003d3d;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .account-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Additional styles as needed for other elements */
+
+    </style>
 <body>
      <header>
          <nav class="navbar">
