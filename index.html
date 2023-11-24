@@ -5,66 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Bank - Welcome</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 <body>
     <header>
-        <nav>
-            <div class="container">
-                <div class="logo">
-                    <img src="bank-logo.png" alt="Your Bank Logo">
-                    <h1>Your Bank</h1>
-                </div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="accounts.html">Accounts</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="bank-logo.png" alt="Your Bank Logo">
+                <h1>Your Bank</h1>
             </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="accounts.html">Accounts</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
         </nav>
     </header>
+
     <section class="hero">
-        <div class="container">
-            <h1>Welcome to Your Bank</h1>
-            <p>Your trusted partner in banking services.</p>
-            <a href="accounts.html" class="btn">Explore Accounts</a>
-        </div>
+        <h1>Welcome to Your Bank</h1>
+        <p>Your trusted partner in banking services.</p>
+        <a href="accounts.html" class="btn btn-primary">Explore Accounts</a>
     </section>
+
     <section class="features">
-        <div class="container">
-            <div class="feature">
-                <img src="icon1.png" alt="Icon 1">
-                <h2>Online Banking</h2>
-                <p>Manage your accounts 24/7.</p>
-            </div>
-            <div class="feature">
-                <img src="icon2.png" alt="Icon 2">
-                <h2>Secure Transactions</h2>
-                <p>Your transactions are safe and secure.</p>
-            </div>
-            <div class="feature">
-                <img src="icon3.png" alt="Icon 3">
-                <h2>Expert Support</h2>
-                <p>Our team is here to assist you.</p>
-            </div>
+        <div class="feature">
+            <img src="icon1.png" alt="Online Banking">
+            <h2>Online Banking</h2>
+            <p>Manage your accounts 24/7.</p>
+        </div>
+        <div class="feature">
+            <img src="icon2.png" alt="Secure Transactions">
+            <h2>Secure Transactions</h2>
+            <p>Your transactions are safe and secure.</p>
+        </div>
+        <div class="feature">
+            <img src="icon3.png" alt="Expert Support">
+            <h2>Expert Support</h2>
+            <p>Our team is here to assist you.</p>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2023 Your Bank. All rights reserved.</p>
-        </div>
+        <p>&copy; 2023 Your Bank. All rights reserved.</p>
     </footer>
-<script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
-</script>
-
 </body>
 </html>
