@@ -15,6 +15,11 @@ header {
     text-align: center;
 }
 
+.logo img {
+    max-width: 100px; /* Adjust as necessary */
+    height: auto;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
