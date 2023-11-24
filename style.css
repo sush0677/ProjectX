@@ -58,18 +58,16 @@ header {
     margin-bottom: 20px;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #003366;
-    color: white;
-    padding: 10px 20px;
+.btn-primary, .btn-secondary, .btn-tertiary {
+    background-color: #004d4d;
+    color: #ffffff;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
 }
-
 .btn:hover {
     background-color: #001f4d;
 }
