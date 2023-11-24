@@ -23,15 +23,38 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+.button-group {
+    text-align: center; /* Align buttons in the center */
+    margin-top: 20px;
+}
 
-        button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px; /* Spacing between buttons */
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-save {
+    background-color: #5bc0de; /* Lighter shade for Save */
+    color: #fff;
+}
+
+.btn-cancel {
+    background-color: #6c757d; /* Grey for Cancel */
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: 0.9; /* Slight change on hover */
+}
+
     </style>
 </head>
 <body>
@@ -104,11 +127,13 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn">Submit</button>
-            </form>
-        </div>
-    </main>
-    <!-- Add this script at the end of your HTML body -->
+    <div class="form-group button-group">
+        <button type="submit" class="btn btn-submit">Submit</button>
+        <button type="button" class="btn btn-save">Save</button>
+        <button type="button" class="btn btn-cancel">Cancel</button>
+    </div>
+</form>
+
 <script>
     const form = document.querySelector('form');
     const mobileInput = document.getElementById('mobile');
