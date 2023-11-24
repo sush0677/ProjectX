@@ -3,76 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Bank - Welcome</title>
+    <title>Accounts - Your Bank</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 <body>
     <header>
-        <nav>
-            <div class="container">
-                <div class="logo">
-                    <img src="bank-logo.png" alt="Your Bank Logo">
-                    <h1>Your Bank</h1>
-                </div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="accounts.html">Accounts</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </div>
-        </nav>
+        <!-- Header content (same as index.html) -->
     </header>
+
+    <section class="breadcrumbs">
+        <div class="container">
+            <p><a href="index.html">Home</a> > Accounts</p>
+        </div>
+    </section>
+
     <main>
         <div class="container">
             <h1>Explore Our Account Options</h1>
             <p>At Your Bank, we offer a range of account options to meet your unique financial needs and goals.</p>
 
-            <div class="account-option">
-                <img src="savings-account.jpg" alt="Savings Account">
-                <div class="account-info">
-                    <h2>Savings Account</h2>
-                    <p>Our high-yield savings account is designed to help you save and grow your money over time. Earn competitive interest rates while enjoying easy access to your funds.</p>
-                    <a href="openaccount.html" class="btn">Open Account</a>
+            <div class="account-options">
+                <!-- Savings Account -->
+                <div class="account-card">
+                    <img src="savings-account.jpg" alt="Savings Account" class="account-image">
+                    <div class="account-content">
+                        <h2>Savings Account</h2>
+                        <p>Our high-yield savings account is designed to help you save and grow your money over time.</p>
+                        <a href="#open-savings-account" class="btn btn-primary">Open Account</a>
+                    </div>
+                </div>
+
+                <!-- Checking Account -->
+                <div class="account-card">
+                    <img src="checking-account.jpg" alt="Checking Account" class="account-image">
+                    <div class="account-content">
+                        <h2>Checking Account</h2>
+                        <p>Experience convenience with our checking account. Enjoy features like online banking, and more.</p>
+                        <a href="#open-checking-account" class="btn btn-secondary">Open Account</a>
+                    </div>
+                </div>
+
+                <!-- CD Account -->
+                <div class="account-card">
+                    <img src="cd-account.jpg" alt="Certificates of Deposit" class="account-image">
+                    <div class="account-content">
+                        <h2>Certificates of Deposit (CDs)</h2>
+                        <p>Lock in your savings with our CDs. Earn guaranteed returns with fixed-term options.</p>
+                        <a href="#open-cd-account" class="btn btn-tertiary">Open Account</a>
+                    </div>
                 </div>
             </div>
-
-            <div class="account-option">
-                <img src="checking-account.jpg" alt="Checking Account">
-                <div class="account-info">
-                    <h2>Checking Account</h2>
-                    <p>Experience convenience and flexibility with our checking account. Enjoy features like online banking, mobile check deposits, and a wide ATM network.</p>
-                    <a href="openaccount.html" class="btn">Open Account</a>
-                </div>
-            </div>
-
-            <div class="account-option">
-                <img src="cd-account.jpg" alt="Certificates of Deposit">
-                <div class="account-info">
-                    <h2>Certificates of Deposit (CDs)</h2>
-                    <p>Lock in your savings with our CDs. Earn guaranteed returns with fixed-term options. Choose the term that suits your financial goals.</p>
-                    <a href="openaccount.html" class="btn">Open Account</a>
-                </div>
-            </div>
-
         </div>
     </main>
-        
-<footer>
-        <div class="container">
-            <p>&copy; 2023 Your Bank. All rights reserved.</p>
-        </div>
+
+    <footer>
+        <!-- Footer content -->
     </footer>
-<script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
-</script>
-
 </body>
 </html>
