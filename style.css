@@ -16,13 +16,12 @@ header {
 }
 
 .logo img {
-    max-width: 100px; /* Adjust as necessary */
+    max-width: 40px; /* Adjust as necessary */
     height: auto;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     max-width: 1140px;
     margin: 0 auto;
