@@ -1,120 +1,94 @@
-/* Reset some default styles */
-* {
+/* Base styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Professional and modern font */
+    background-color: #008080; /* Teal background */
+    color: #ffffff;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    line-height: 1.6;
 }
 
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
+header {
+    background: #005f5f;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
 }
 
-.container {
-    max-width: 1200px;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1140px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header Styles */
-header {
-    background-color: #003366;
-    color: white;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
-img{
-     width: 80mm;
-    height: 50mm;
-    margin-right: 10px;
-}
-
-nav ul {
+.nav-menu {
     list-style: none;
     display: flex;
 }
 
-nav ul li {
-    margin-right: 20px;
+.nav-menu li {
+    padding: 0 20px;
 }
 
-nav ul li:last-child {
-    margin-right: 0;
-}
-
-nav a {
+.nav-menu a {
+    color: #fff;
     text-decoration: none;
-    color: white;
     font-weight: bold;
 }
 
-/* Hero Section Styles */
+.nav-menu a:hover {
+    color: #aadcd4;
+    text-decoration: underline; /* Modern hover effect */
+}
+
 .hero {
-    background-image: url('bank-hero.jpg');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(to right, #006d6d, #007070); /* Gradient background */
+    padding: 2rem;
     text-align: center;
-    padding: 100px 0;
 }
 
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #003366;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #001f4d;
-}
-
-/* Features Section Styles */
 .features {
-    background-color: #f5f5f5;
-    padding: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem;
 }
 
 .feature {
+    background: #006060;
+    padding: 1rem;
     text-align: center;
-    margin-bottom: 40px;
+    border-radius: 10px; /* Rounded corners for feature cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .feature img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
+    max-width: 80px; /* Consistent image size */
+    height: auto;
+    margin-bottom: 1rem;
 }
-/* Footer Styles */
+
 footer {
-    background-color: #003366;
-    color: white;
+    background: #004d4d;
+    color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 1rem 0;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+/* Additional enhancements */
+/* Add subtle animations for hover effects on buttons and navigation links */
+/* Consider adding a sticky navbar for better user navigation */
