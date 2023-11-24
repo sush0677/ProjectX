@@ -3,116 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Bank - Welcome</title>
+    <title>Services - Your Bank</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
-    <style>
-        /* Services page specific styles */
-.services .service-option {
-    background-color: #006666; /* Teal variant for service cards */
-    padding: 20px;
-    margin-bottom: 20px;
+    <stlyle>
+        /* Services Page Specific Styles */
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.service-card {
+    background: #006060;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
-.services .service-option img {
-    width: 100px; /* Adjust as needed */
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-image {
+    width: 100%;
     height: auto;
-    margin-right: 20px;
+    display: block;
 }
 
-.services .service-info {
-    color: #ffffff;
+.service-content {
+    padding: 15px;
+    text-align: center;
 }
 
-.services .service-info h2 {
-    margin-top: 0;
+.faqs {
+    margin-top: 40px;
 }
 
-.services .btn {
-    background-color: #004d4d; /* Dark teal for buttons */
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
+.faq {
+    background: #005f5f;
+    padding: 10px 15px;
+    margin-bottom: 10px;
     border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
 }
 
-.services .btn:hover {
-    background-color: #003d3d; /* Slightly darker on hover */
+.faq h3 {
+    margin-top: 0;
+    color: #aadcd4;
 }
 
-    </style>
+.faq p {
+    color: #ffffff;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Add more styles as needed for other elements */
+
+    </stlyle>
 <body>
     <header>
-        <nav>
-            <div class="container">
-                <div class="logo">
-                    <img src="bank-logo.png" alt="Your Bank Logo">
-                    <h1>Your Bank</h1>
-                </div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="accounts.html">Accounts</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
+         <nav class="navbar">
+            <div class="logo">
+                <img src="bank-logo.png" alt="Your Bank Logo">
+                <h1>Your Bank</h1>
             </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="accounts.html">Accounts</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
         </nav>
     </header>
+
+    <section class="breadcrumbs">
+        <div class="container">
+            <p><a href="index.html">Home</a> &gt; Services</p>
+        </div>
+    </section>
+
     <main>
         <div class="container">
             <h1>Our Banking Services</h1>
-            <p>Discover the wide range of financial services we offer to our valued customers.</p>
+            <p>Discover the wide range of financial services we offer.</p>
 
-            <div class="service-option">
-                <img src="online-banking.jpg" alt="Online Banking">
-                <div class="service-info">
-                    <h2>Online Banking</h2>
-                    <p>Experience the convenience of managing your accounts online. Access your balances, make transfers, pay bills, and more with our secure online banking platform.</p>
-                    <a href="#learn-more-online-banking" class="btn">Learn More</a>
+            <div class="service-container">
+                <!-- Service Option 1 -->
+                <div class="service-card">
+                    <img src="online-banking.jpg" alt="Online Banking" class="service-image">
+                    <div class="service-content">
+                        <h2>Online Banking</h2>
+                        <p>Manage your accounts online with ease and security.</p>
+                        <a href="#learn-more-online" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service Option 2 -->
+                <div class="service-card">
+                    <img src="loan-services.jpg" alt="Loan Services" class="service-image">
+                    <div class="service-content">
+                        <h2>Loan Services</h2>
+                        <p>Flexible loan options to meet your financial needs.</p>
+                        <a href="#explore-loans" class="btn btn-secondary">Explore</a>
+                    </div>
+                </div>
+
+                <!-- Service Option 3 -->
+                <div class="service-card">
+                    <img src="investment-services.jpg" alt="Investment Services" class="service-image">
+                    <div class="service-content">
+                        <h2>Investment Services</h2>
+                        <p>Expert advice to grow your wealth effectively.</p>
+                        <a href="#invest-now" class="btn btn-tertiary">Invest Now</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="service-option">
-                <img src="loan-services.jpg" alt="Loan Services">
-                <div class="service-info">
-                    <h2>Loan Services</h2>
-                    <p>We offer a variety of loan options to help you achieve your financial goals. Whether you need a personal loan, mortgage, or business loan, we have you covered.</p>
-                    <a href="#explore-loan-services" class="btn">Explore Loans</a>
+            <!-- FAQ Section -->
+            <section class="faqs">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq">
+                    <h3>How can I open an account online?</h3>
+                    <p>Opening an account online is simple and secure. Just follow the steps on our 'Open Account' page.</p>
                 </div>
-            </div>
-
-            <div class="service-option">
-                <img src="investment-services.jpg" alt="Investment Services">
-                <div class="service-info">
-                    <h2>Investment Services</h2>
-                    <p>Grow your wealth with our expert investment services. Our team can help you create a diversified investment portfolio tailored to your financial objectives.</p>
-                    <a href="#invest-with-us" class="btn">Invest Now</a>
+                <div class="faq">
+                    <h3>What loan options do you offer?</h3>
+                    <p>We offer a variety of loans including personal, home, and auto loans.</p>
                 </div>
-            </div>
-
+                <!-- Add more FAQs as needed -->
+            </section>
         </div>
     </main>
-        
-<footer>
-        <div class="container">
-            <p>&copy; 2023 Your Bank. All rights reserved.</p>
-        </div>
+
+    <footer>
+       <p>&copy; 2023 Your Bank. All rights reserved.</p>
     </footer>
-<script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
-</script>
-
 </body>
 </html>
