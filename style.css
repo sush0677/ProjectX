@@ -1,9 +1,19 @@
 /* Base styles */
+html {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #008080;
     color: #ffffff;
+    height: 100%;
     margin: 0;
+}
+
+.main-content {
+    flex-grow: 1;
 }
 
 header {
