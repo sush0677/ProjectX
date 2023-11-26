@@ -104,9 +104,11 @@ header {
 }
 
 .feature img {
-    max-width: auto; 
-    height: auto;
+    width: 470px;/* Set a specific width */
+    height: 200px;/* Set a specific height */
+    display: block;
 }
+
 
 footer {
     background: #004d4d;
