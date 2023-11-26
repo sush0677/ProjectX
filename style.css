@@ -35,7 +35,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1140px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -114,6 +114,7 @@ footer {
     background: #004d4d;
     color: #fff;
     text-align: center;
+    max-width: 100%;
     padding: 1rem 0;
 }
 
