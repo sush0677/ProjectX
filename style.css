@@ -105,7 +105,7 @@ header {
 
 .feature img {
     max-width: 100%; /* Consistent image size */
-    height: auto;
+    height: 100%;
 }
 
 footer {
