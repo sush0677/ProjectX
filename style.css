@@ -1,10 +1,9 @@
 /* Base styles */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Professional and modern font */
-    background-color: #008080; /* Teal background */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #008080;
     color: #ffffff;
     margin: 0;
-
 }
 
 header {
@@ -16,18 +15,18 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    margin-right: 20px; /* Space between logo and title */
+    margin-right: 20px;
 }
 
 .logo img {
     max-width: 40px;
     height: 40px;
-    margin-right: 10px; /* Space between logo image and bank name */
+    margin-right: 10px;
 }
 
 .logo h1 {
     margin: 0;
-    font-size: 1.5rem; /* Adjust size as needed */
+    font-size: 1.5rem;
     color: #fff;
 }
 
@@ -44,7 +43,7 @@ header {
     list-style: none;
     display: flex;
     padding: 0;
-    margin: 0; /* Removes default margin */
+    margin: 0;
 }
 
 .nav-menu li {
@@ -62,12 +61,12 @@ header {
     text-decoration: underline;
 }
 
-
 .hero {
-    background: linear-gradient(to right, #006d6d, #007070); /* Gradient background */
+    background: linear-gradient(to right, #006d6d, #007070);
     padding: 2rem;
     text-align: center;
 }
+
 .hero h1 {
     font-size: 36px;
     margin-bottom: 20px;
@@ -84,10 +83,10 @@ header {
     margin-top: 10px;
     text-decoration: none;
 }
+
 .btn:hover {
     background-color: #001f4d;
 }
-
 
 .features {
     display: grid;
@@ -99,16 +98,15 @@ header {
 .feature {
     background: #006060;
     text-align: center;
-    border-radius: 10px; /* Rounded corners for feature cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .feature img {
-    width: 475px;/* Set a specific width */
-    height: 200px;/* Set a specific height */
-    display: block;
+    width: 100%; /* Adjusted for responsiveness */
+    height: 350px; /* Adjusted for responsiveness */
+    object-fit: cover; /* Ensures proper scaling */
 }
-
 
 footer {
     background: #004d4d;
@@ -118,7 +116,7 @@ footer {
     padding: 1rem 0;
 }
 
-/* Responsive Design */
+/* Responsive Design Adjustments */
 @media (max-width: 768px) {
     .features {
         grid-template-columns: 1fr;
@@ -127,8 +125,20 @@ footer {
     .navbar {
         flex-direction: column;
     }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu li {
+        padding: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Adjusted for smaller screens */
+    }
 }
 
 /* Additional enhancements */
-/* Add subtle animations for hover effects on buttons and navigation links */
 /* Consider adding a sticky navbar for better user navigation */
