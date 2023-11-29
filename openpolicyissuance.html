@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts - Your Bank</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+    <style>
+        /* Accounts Page Specific Styles */
+.account-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.account-card {
+    background: #006060;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-10px);
+}
+
+.account-image {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+.account-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.account-content h2 {
+    color: #aadcd4;
+}
+
+.btn-primary, .btn-secondary, .btn-tertiary {
+    background-color: #004d4d;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-tertiary:hover {
+    background-color: #003d3d;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .account-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Additional styles as needed for other elements */
+
+    </style>
+<body>
+     <header>
+         <nav class="navbar">
+            <div class="logo">
+                <img src="bank-logo.png" alt="Your Bank Logo">
+                <h1>Your Bank</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="accounts.html">Accounts</a></li>
+                <li><a href="Insurance.html">Insurance</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-content">
+    <main>
+        <div class="container">
+            <h1>Explore Our Account Options</h1>
+            <p>At Your Bank, we offer a range of account options to meet your unique financial needs and goals.</p>
+
+            <div class="account-options">
+                <!-- Savings Account -->
+                <div class="account-card">
+                    <img src="savings-account.jpg" alt="Savings Account" class="account-image">
+                    <div class="account-content">
+                        <h2>Savings Account</h2>
+                        <p></p>
+                        <a href="openaccount.html" class="btn btn-primary">Open form</a>
+                    </div>
+                </div>
+
+                <!-- Checking Account -->
+                <div class="account-card">
+                    <img src="checking-account.jpg" alt="Checking Account" class="account-image">
+                    <div class="account-content">
+                        <h2>Checking Account</h2>
+                        <p></p>
+                        <a href="openaccount.html" class="btn btn-secondary">Open form</a>
+                    </div>
+                </div>
+
+                <!-- CD Account -->
+                <div class="account-card">
+                    <img src="cd-account.jpg" alt="Certificates of Deposit" class="account-image">
+                    <div class="account-content">
+                        <h2>Certificates of Deposit (CDs)</h2>
+                        <p></p>
+                        <a href="openaccount.html" class="btn btn-tertiary">Open form</a>
+                    </div>
+                </div>
+                <div class="account-card">
+                    <img src="savings-account.jpg" alt="Savings Account" class="account-image">
+                    <div class="account-content">
+                        <h2>Savings Account</h2>
+                        <p></p>
+                        <a href="openaccount.html" class="btn btn-primary">Open form</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+    <footer>
+        <p>&copy; 2023 Your Bank. All rights reserved.</p>
+    </footer>
+</body>
+</html>

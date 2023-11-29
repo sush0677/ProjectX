@@ -3,125 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Your Bank</title>
+    <title>insurances - Your Bank</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<style>
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
+    <style>
+        /* insurances Page Specific Styles */
+.insurance-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.insurance-card {
+    background: #006060;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.insurance-card:hover {
+    transform: translateY(-10px);
+}
+
+.insurance-image {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+.insurance-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.insurance-content h2 {
+    color: #aadcd4;
+}
+
+.btn-primary, .btn-secondary, .btn-tertiary {
+    background-color: #004d4d;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-tertiary:hover {
+    background-color: #003d3d;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .insurance-options {
+        grid-template-columns: 1fr;
     }
-    
-    .card-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
-        gap: 20px; /* space between cards */
-    }
-    
-    .card {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        text-align: center;
-    }
-    
-    .card h2 {
-        margin-bottom: 15px;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 992px) {
-        .card-container {
-            grid-template-columns: repeat(2, 1fr); /* 2 columns layout for smaller screens */
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .card-container {
-            grid-template-columns: 1fr; /* 1 column layout for mobile screens */
-        }
-    }
+}
+
+/* Additional styles as needed for other elements */
+
     </style>
 <body>
-    <header>
-        <nav class="navbar">
+     <header>
+         <nav class="navbar">
             <div class="logo">
                 <img src="bank-logo.png" alt="Your Bank Logo">
                 <h1>Your Bank</h1>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="accounts.html">Accounts</a></li>
+                <li><a href="accounts.html">Account</a></li>
                 <li><a href="Insurance.html">Insurance</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
     </header>
+    <div class="main-content">
     <main>
-        <div class="main-content"></div>
         <div class="container">
-            <h1>Our Services</h1>
-            <div class="card-container">
-                <!-- Card 1 -->
-                <div class="card">
-                    <h2>Insurance Companies Info</h2>
-                    <!-- Content for Insurance Companies Info -->
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="card">
-                    <h2>Insurance Products</h2>
-                    <!-- Content for Insurance Products -->
+            <h1>Explore Our insurance Options</h1>
+            <p>At Your Bank, we offer a range of insurance options to meet your unique financial needs and goals.</p>
+
+            <div class="insurance-options">
+                <!-- Insurance Companies Info  -->
+                <div class="insurance-card">
+                    <img src="savings-insurance.jpg" alt="Insurance Companies Info" class="insurance-image">
+                    <div class="insurance-content">
+                        <h2>Insurance Companies Info </h2>
+                        <p></p>
+                        <a href="openinsurance.html" class="btn btn-primary">Open form</a>
+                    </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="card">
-                    <h2>Policy Issuance</h2>
-                    <!-- Content for Policy Issuance -->
+                <!-- Insurance Products -->
+                <div class="insurance-card">
+                    <img src="checking-insurance.jpg" alt="Insurance Products" class="insurance-image">
+                    <div class="insurance-content">
+                        <h2>Insurance Products</h2>
+                        <p></p>
+                        <a href="openinsurance.html" class="btn btn-secondary">Open form</a>
+                    </div>
                 </div>
-
-                <!-- Card 4 -->
-                <div class="card">
-                    <h2>Policy Delivery</h2>
-                    <!-- Content for Policy Delivery -->
+                <!-- CD insurance -->
+                <div class="insurance-card">
+                    <img src="cd-insurance.jpg" alt="Certificates of Deposit" class="insurance-image">
+                    <div class="insurance-content">
+                        <h2>Policy Issuance</h2>
+                        <p></p>
+                        <a href="openpolicyissuance.html" class="btn btn-tertiary">Open form</a>
+                    </div>
                 </div>
-
-                <!-- Card 5 -->
-                <div class="card">
-                    <h2>Cancel Policy</h2>
-                    <!-- Content for Cancel Policy -->
+                <!-- CD insurance -->
+                <div class="insurance-card">
+                    <img src="cd-insurance.jpg" alt="Certificates of Deposit" class="insurance-image">
+                    <div class="insurance-content">
+                        <h2>Policy Delivery (insurance Policy/Card Delivery)</h2>
+                        <p></p>
+                        <a href="openinsurance.html" class="btn btn-tertiary">Open form</a>
+                    </div>
                 </div>
-
-                <!-- Card 6 -->
-                <div class="card">
-                    <h2>Claims History</h2>
-                    <!-- Content for Claims History -->
+                <!-- CD insurance -->
+                <div class="insurance-card">
+                    <img src="cd-insurance.jpg" alt="Certificates of Deposit" class="insurance-image">
+                    <div class="insurance-content">
+                        <h2>Cancel Policy</h2>
+                        <p></p>
+                        <a href="openinsurance.html" class="btn btn-tertiary">Open form</a>
+                    </div>
                 </div>
-
-                <!-- Card 7 -->
-                <div class="card">
-                    <h2>Policy Renewal</h2>
-                    <!-- Content for Policy Renewal -->
+                <!-- CD insurance -->
+                <div class="insurance-card">
+                    <img src="cd-insurance.jpg" alt="Certificates of Deposit" class="insurance-image">
+                    <div class="insurance-content">
+                        <h2>Claims History</h2>
+                        <p></p>
+                        <a href="openinsurance.html" class="btn btn-tertiary">Open form</a>
+                    </div>
                 </div>
-
-                <!-- Card 8 -->
-                <div class="card">
-                    <h2>Reports</h2>
-                    <!-- Content for Reports -->
+                <!-- CD insurance -->
+                <div class="insurance-card">
+                    <img src="cd-insurance.jpg" alt="Certificates of Deposit" class="insurance-image">
+                    <div class="insurance-content">
+                        <h2>Policy Renewal</h2>
+                        <p></p>
+                        <a href="openinsurance.html" class="btn btn-tertiary">Open form</a>
+                    </div>
                 </div>
-
-                <!-- Card 9 -->
-                <div class="card">
-                    <h2>Integration</h2>
-                    <!-- Content for Integration -->
+                <!-- CD insurance -->
+                <div class="insurance-card">
+                    <img src="cd-insurance.jpg" alt="Certificates of Deposit" class="insurance-image">
+                    <div class="insurance-content">
+                        <h2>Reports</h2>
+                        <p></p>
+                        <a href="openinsurance.html" class="btn btn-tertiary">Open form</a>
+                    </div>
+                </div>
+                <!-- CD insurance -->
+                <div class="insurance-card">
+                    <img src="cd-insurance.jpg" alt="Certificates of Deposit" class="insurance-image">
+                    <div class="insurance-content">
+                        <h2>Intgration</h2>
+                        <p></p>
+                        <a href="openinsurance.html" class="btn btn-tertiary">Open form</a>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-</div>
+    </div>
     <footer>
         <p>&copy; 2023 Your Bank. All rights reserved.</p>
     </footer>
