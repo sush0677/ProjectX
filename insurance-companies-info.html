@@ -262,187 +262,82 @@
                 </form>
             </div>
         </main>
-<script>
-    // Function to check if the input is a number
-    function validatephonenumberInput(event) {
-        const inputChar = event.key;
-        const allowedCharacters = '0123456789';
-        
-        if (!allowedCharacters.includes(inputChar)) {
-            event.preventDefault();
-            alert('Only numeric values are allowed in the phonenumber Number field.');
-        }
-    }
-
-    // Adding event listener to the phonenumber input field
-    document.getElementById('phonenumber').addEventListener('keypress', validatephonenumberInput);
-    document.getElementById('faxnumber').addEventListener('keypress', validatephonenumberInput);
-
-       // Function to check if the input is alphabetic
-       function validateAlphaInput(event) {
-        const inputChar = event.key;
-        const isAlpha = /^[a-zA-Z]+$/.test(inputChar);
-        
-        if (!isAlpha && inputChar !== ' ') { // Allowing alphabetic characters and space
-            event.preventDefault();
-            alert('Only alphabetic characters are allowed in this field.');
-        }
-    }
-
-    // Adding event listener to specific input fields
-    document.getElementById('companyname').addEventListener('keypress', validateAlphaInput); 
-    document.getElementById('companynameinArabic').addEventListener('keypress', validateAlphaInput); 
-    document.getElementById('companyaddress').addEventListener('keypress', validateAlphaInput);
-    document.getElementById('contactname').addEventListener('keypress', validateAlphaInput);
-    document.getElementById('Email').addEventListener('keypress', validateAlphaInput);
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // Load saved data from localStorage
-        loadFormData();
-
-        // Save button event listener
-        document.querySelector('.btn.save').addEventListener('click', saveFormData);
-    });
-
-    function saveFormData() {
-        // Get the form data
-        const formData = {
-            companyname: document.getElementById('companyname').value,
-            companynameinArabic: document.getElementById('companynameinArabic').value,
-            phonenumber: document.getElementById('phonenumber').value,
-            Email: document.getElementById('Email').value,
-            companyaddress: document.getElementById('companyaddress').value,
-            contactname: document.getElementById('contactname').value,
-            nationalId: document.getElementById('Webaddress').value,
-            POBox: document.getElementById('POBox').value,
-            flag: document.getElementById('flag').value,
-            bankname:document.getElementById('bankname').value,
-            accountname:document.getElementById('accountname').value,
-            accountnumber:document.getElementById('accountnumber').value,
-            branchname:document.getElementById('branchname').value,
-            routingnumber:document.getElementById('routingnumber').value,
-            iban:document.getElementById('iban').value
-        };
-
-        // Save form data to localStorage
-        localStorage.setItem('formData', JSON.stringify(formData));
-        alert('Form data saved!');
-    }
-
-    function loadFormData() {
-        // Check if saved data is available
-        const savedData = localStorage.getItem('formData');
-        if (savedData) {
-            const formData = JSON.parse(savedData);
-
-            // Populate the form fields with saved data
-            document.getElementById('companyname').value = formData.companyname;
-            document.getElementById('companynameinArabic').value = formData.companynameinArabic;
-            document.getElementById('phonenumber').value = formData.phonenumber;
-            document.getElementById('Email').value = formData.Email;
-            document.getElementById('companyaddress').value = formData.companyaddress;
-            document.getElementById('contactname').value = formData.contactname;
-            document.getElementById('Webaddress').value = formData.nationalId;
-            document.getElementById('POBox').value = formData.POBox;
-            document.getElementById('flag').value = formData.flag;
-            document.getElementById('bankname').value = formData.bankname
-            document.getElementById('accountname').value = formData.accountname
-            document.getElementById('accountnumber').value = formData.accountnumber
-            document.getElementById('branchname').value = formData.branchname
-            document.getElementById('routingnumber').value = formData.routingnumber
-            document.getElementById('iban').value = formData.iban
-        }
-    }
-
-    // Clear form data function
-    function clearFormData() {
-        document.getElementById('companyname').value = '';
-        document.getElementById('companynameinArabic').value = '';
-        document.getElementById('phonenumber').value = '';
-        document.getElementById('Email').value = '';
-        document.getElementById('companyaddress').value = '';
-        document.getElementById('contactname').value = '';
-        document.getElementById('Webaddress').value = '';
-        document.getElementById('POBox').value = '';
-        document.getElementById('flag').value = '';
-        document.getElementById('bankname').value = '';
-        document.getElementById('accountname').value = '';
-        document.getElementById('accountnumber').value= '';
-        document.getElementById('branchname').value= '';
-        document.getElementById('routingnumber').value= '';
-        document.getElementById('iban').value= '';
-
-        // Clear data from localStorage
-        localStorage.removeItem('formData');
-    }
-
-    // Event listeners
-    document.addEventListener('DOMContentLoaded', (event) => {
-        loadFormData();
-        document.querySelector('.btn.save').addEventListener('click', saveFormData);
-        document.querySelector('.btn.cancel').addEventListener('click', clearFormData);
-    });
-
-    function submitForm() {
-        // Perform form validation or data processing here
-
-        // Display a confirmation message with a resubmit button
-        const confirmationMessage = document.createElement('div');
-        confirmationMessage.innerHTML = `
-            <p>Thank you for submitting the form. We will get back to you soon!</p>
-            <button onclick="prepareForResubmission()" class="btn resubmit">Submit Another Response</button>
-        `;
-        confirmationMessage.className = 'confirmation-message';
-
-        document.body.appendChild(confirmationMessage);
-
-        // Hide the form
-        document.querySelector('.form-container').style.display = 'none';
-
-        // Smooth scroll to top if needed
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-
-        // Prevent form from actually submitting for demonstration
-        return false; // Remove this line in real implementation
-    }
-
-    function prepareForResubmission() {
-        // Clear the confirmation message
-        document.querySelector('.confirmation-message').remove();
-
-        // Show the form again
-        document.querySelector('.form-container').style.display = 'block';
-
-        // Clear the form for a new submission
-        clearFormData();
-    }
-
-    function clearFormData() {
-        document.getElementById('companyname').value = '';
-        document.getElementById('companynameinArabic').value = '';
-        document.getElementById('phonenumber').value = '';
-        document.getElementById('Email').value = '';
-        document.getElementById('companyaddress').value = '';
-        document.getElementById('contactname').value = '';
-        document.getElementById('Webaddress').value = '';
-        document.getElementById('POBox').value = '';
-        document.getElementById('flag').value = '';
-        document.getElementById('bankname').value = '';
-        document.getElementById('accountname').value = '';
-        document.getElementById('accountnumber').value= '';
-        document.getElementById('branchname').value= '';
-        document.getElementById('routingnumber').value= '';
-        document.getElementById('iban').value= '';
-
-        // Optionally clear localStorage if needed
-        localStorage.removeItem('formData');
-    }
-
-    // Attach the submitForm function to the form's submit event
-    document.querySelector('.account-opening-form').onsubmit = submitForm;
-</script>
-
-</div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('.account-opening-form');
+            const localStorageKey = 'formSaveData';
+    
+            // Function to save form data to local storage
+            function saveFormData() {
+                const formData = new FormData(form);
+                const data = {};
+                formData.forEach((value, key) => { data[key] = value });
+                localStorage.setItem(localStorageKey, JSON.stringify(data));
+                alert('Form data saved!');
+            }
+    
+            // Function to load form data from local storage
+            function loadFormData() {
+                const savedData = JSON.parse(localStorage.getItem(localStorageKey));
+                if (savedData) {
+                    Object.entries(savedData).forEach(([key, value]) => {
+                        const element = form.elements[key];
+                        if (element) element.value = value;
+                    });
+                }
+            }
+    
+            // Load form data on page load
+            loadFormData();
+    
+            // Validate input for alphabets only
+            function validateAlphabetsOnly(event) {
+                if (!/^[a-zA-Z\s]*$/.test(event.key)) {
+                    event.preventDefault();
+                    alert('Only alphabetic characters are allowed here.');
+                }
+            }
+    
+            // Validate input for numbers only
+            function validateNumbersOnly(event) {
+                if (!/^[0-9]*$/.test(event.key)) {
+                    event.preventDefault();
+                    alert('Only numeric values are allowed here.');
+                }
+            }
+    
+            // Apply validation rules
+            document.getElementById('companyname').addEventListener('keypress', validateAlphabetsOnly);
+            document.getElementById('POBox').addEventListener('keypress', validateNumbersOnly);
+            document.getElementById('phonenumber').addEventListener('keypress', validateNumbersOnly);
+            document.getElementById('faxnumber').addEventListener('keypress', validateNumbersOnly);
+            document.getElementById('routingnumber').addEventListener('keypress', validateNumbersOnly);
+            // More validation rules can be added here for other fields...
+    
+            // Save button functionality
+            document.querySelector('.btn.save').addEventListener('click', function(event) {
+                event.preventDefault();
+                saveFormData();
+            });
+    
+            // Cancel button functionality
+            document.querySelector('.btn.cancel').addEventListener('click', function() {
+                form.reset();
+                localStorage.removeItem(localStorageKey);
+            });
+    
+            // Submit button functionality
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Form submitted!');
+                // You can add your submission logic here, e.g., sending data to a server
+                form.reset();
+                localStorage.removeItem(localStorageKey);
+            });
+        });
+    </script>
+    
     <footer>
        <p>&copy; 2023 Your Bank. All rights reserved.</p>
     </footer>
