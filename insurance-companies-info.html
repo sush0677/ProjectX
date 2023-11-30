@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open an Account - Your Bank</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+/* Form Container */
+.form-container {
+    max-width: 750px; /* Adjusted for better spacing */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Form Title */
+.form-title {
+    text-align: center;
+    color: #333;
+}
+
+/* Form Group for Inline Fields */
+.form-group.double {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+    margin-bottom: 15px;
+}
+
+/* Labels and Inputs */
+.form-group.double > div {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Space between fields */
+    flex: 1 1 45%; /* Adjust to control the size of the input and label */
+}
+
+.form-group.double label {
+    min-width: 120px; /* Minimum width for all labels */
+    margin-right: 10px; /* Space between label and input */
+    color: black;
+}
+
+.form-group.double input,
+.form-group.double select {
+    flex: 1; /* Take up remaining space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .form-group.double {
+        flex-direction: column;
+    }
+
+    .form-group.double > div {
+        margin-right: 0; /* Remove margin between stacked fields */
+    }
+
+    .form-group.double label,
+    .form-group.double input,
+    .form-group.double select {
+        flex: none;
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+/* Form Actions Styling */
+.form-actions {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Buttons */
+.form-actions .btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.submit {
+    background-color: #0538c5ad;
+    color: white;
+}
+
+.save {
+    background-color: rgb(54, 248, 54);
+    color: white;
+}
+
+.cancel {
+    background-color: red;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Confirmation Message */
+.confirmation-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+     <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="bank-logo.png" alt="Your Bank Logo">
+                <h1>Your Bank</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="accounts.html">Accounts</a></li>
+                <li class="dropdown">
+                    <a href="Insurance.html" class="dropbtn">Insurance</a>
+                    <div class="dropdown-content">
+                        <a href="insurance-companies-info.html">Insurance Companies Info</a>
+                        <a href="insurance-products.html">Insurance Products</a>
+                        <div class="dropdown2">
+                            <a href="openpolicyissuance.html" class="dropbtn2">Policy Issuance</a>
+                            <div class="dropdown-content2">
+                                <a href="basic-policy-issuance.html">Basic Policy Issuance</a>
+                                <a href="motor-insurance-specifics.html">Motor Insurance Specifics</a>
+                                <a href="fire-insurance-specifics.html">Fire Insurance Specifics</a>
+                                <a href="medical-life-insurance-specifics.html">Medical and Life Insurance Specifics</a>
+                            </div>
+                        </div>
+                        <a href="policy-delivery.html">Policy Delivery</a>
+                        <a href="cancel-policy.html">Cancel Policy</a>
+                        <a href="claims-history.html">Claims History</a>
+                        <a href="policy-renewal.html">Policy Renewal</a>
+                        <a href="reports.html">Reports</a>
+                        <a href="integration.html">Integration</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-content">
+        <main>
+            <div class="form-container">
+                <h3 class="form-title">Maintain, at a minimum, the following information per company:
+                </h3>
+                <form class="account-opening-form">
+                    <div class="form-group double">
+                        <div>
+                            <label for="companyname">company name:</label>
+                            <input type="text" id="companyname" name="companyname" placeholder="kiya" required>
+                        </div>
+                        <div>
+                            <label for="companynameinArabic">company name:</label>
+                            <input type="text" id="companynameinArabic" name="companynameinArabic" placeholder="company name in Arabic" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group double">
+                        <div>
+                            <label for="phonenumber">phone number:</label>
+                            <input type="tel" id="phonenumber" name="phonenumber" placeholder="e.g., 97105123456" required>
+                        </div>
+                        <div>
+                            <label for="faxnumber">fax number:</label>
+                            <input type="tel" id="faxnumber" name="faxnumber" placeholder="e.g., 97105123456" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group double">
+                        <div>
+                            <label for="contactname">contact name:</label>
+                            <input type="text" id="contactname" name="contactname" placeholder="contact name (relationship manager)" required>
+                        </div>
+                        <div>
+                            <label for="companyaddress">company address:</label>
+                            <input type="text" id="companyaddress" name="companyaddress" placeholder="Dubai" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group double">
+                        <div>
+                            <label for="Email">E-mail address:</label>
+                            <input type="text" id="Email" name="Email" placeholder="e.g., 123abc@email.com" required>
+                        </div>
+                        <div>
+                            <label for="Webaddress">Web address:</label>
+                            <input type="url" id="Webaddress" name="Webaddress" placeholder="e.g., www.abc.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group double">
+                        <div>
+                            <label for="POBox">P.O. Box:</label>
+                            <input type="number" id="POBox" name="POBox" placeholder="Enter P.O.Box" required>
+                        </div>
+                        <div>
+                            <label for="flag">active/inactive flag:</label>
+                            <select id="flag" name="flag" required>
+                                <option value="flag1">active</option>
+                                <option value="flag2">inactive</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group double">
+                        <div>
+                            <label for="bankname">Bank Name:</label>
+                            <input type="text" id="bankname" name="bankname" placeholder="Enter bank name" required>
+                        </div>
+                        <div>
+                            <label for="accountname">Account Name:</label>
+                            <input type="text" id="accountname" name="accountname" placeholder="Enter account number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group double">
+                        <div>
+                            <label for="accountnumber">Account Number:</label>
+                            <input type="text" id="accountnumber" name="accountnumber" placeholder="Enter account number" required>
+                        </div>
+                        <div>
+                            <label for="branchname">Branch Name:</label>
+                            <input type="text" id="branchname" name="branchname" placeholder="Enter branch name or number">
+                        </div>
+                    </div>
+
+                    <div class="form-group double">
+                        <div>
+                            <label for="routingnumber">Routing Number:</label>
+                            <input type="text" id="routingnumber" name="routingnumber" placeholder="Enter routing number or sort code">
+                        </div>
+                        <div>
+                            <label for="iban">IBAN:</label>
+                            <input type="text" id="iban" name="iban" placeholder="Enter IBAN">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn submit">Submit</button>
+                        <button type="button" class="btn save">Save</button>
+                        <button type="button" class="btn cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+<script>
+    // Function to check if the input is a number
+    function validatephonenumberInput(event) {
+        const inputChar = event.key;
+        const allowedCharacters = '0123456789';
+        
+        if (!allowedCharacters.includes(inputChar)) {
+            event.preventDefault();
+            alert('Only numeric values are allowed in the phonenumber Number field.');
+        }
+    }
+
+    // Adding event listener to the phonenumber input field
+    document.getElementById('phonenumber').addEventListener('keypress', validatephonenumberInput);
+    document.getElementById('faxnumber').addEventListener('keypress', validatephonenumberInput);
+
+       // Function to check if the input is alphabetic
+       function validateAlphaInput(event) {
+        const inputChar = event.key;
+        const isAlpha = /^[a-zA-Z]+$/.test(inputChar);
+        
+        if (!isAlpha && inputChar !== ' ') { // Allowing alphabetic characters and space
+            event.preventDefault();
+            alert('Only alphabetic characters are allowed in this field.');
+        }
+    }
+
+    // Adding event listener to specific input fields
+    document.getElementById('companyname').addEventListener('keypress', validateAlphaInput); 
+    document.getElementById('companynameinArabic').addEventListener('keypress', validateAlphaInput); 
+    document.getElementById('companyaddress').addEventListener('keypress', validateAlphaInput);
+    document.getElementById('contactname').addEventListener('keypress', validateAlphaInput);
+    document.getElementById('Email').addEventListener('keypress', validateAlphaInput);
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Load saved data from localStorage
+        loadFormData();
+
+        // Save button event listener
+        document.querySelector('.btn.save').addEventListener('click', saveFormData);
+    });
+
+    function saveFormData() {
+        // Get the form data
+        const formData = {
+            companyname: document.getElementById('companyname').value,
+            companynameinArabic: document.getElementById('companynameinArabic').value,
+            phonenumber: document.getElementById('phonenumber').value,
+            Email: document.getElementById('Email').value,
+            companyaddress: document.getElementById('companyaddress').value,
+            contactname: document.getElementById('contactname').value,
+            nationalId: document.getElementById('Webaddress').value,
+            POBox: document.getElementById('POBox').value,
+            flag: document.getElementById('flag').value,
+            bankname:document.getElementById('bankname').value,
+            accountname:document.getElementById('accountname').value,
+            accountnumber:document.getElementById('accountnumber').value,
+            branchname:document.getElementById('branchname').value,
+            routingnumber:document.getElementById('routingnumber').value,
+            iban:document.getElementById('iban').value
+        };
+
+        // Save form data to localStorage
+        localStorage.setItem('formData', JSON.stringify(formData));
+        alert('Form data saved!');
+    }
+
+    function loadFormData() {
+        // Check if saved data is available
+        const savedData = localStorage.getItem('formData');
+        if (savedData) {
+            const formData = JSON.parse(savedData);
+
+            // Populate the form fields with saved data
+            document.getElementById('companyname').value = formData.companyname;
+            document.getElementById('companynameinArabic').value = formData.companynameinArabic;
+            document.getElementById('phonenumber').value = formData.phonenumber;
+            document.getElementById('Email').value = formData.Email;
+            document.getElementById('companyaddress').value = formData.companyaddress;
+            document.getElementById('contactname').value = formData.contactname;
+            document.getElementById('Webaddress').value = formData.nationalId;
+            document.getElementById('POBox').value = formData.POBox;
+            document.getElementById('flag').value = formData.flag;
+            document.getElementById('bankname').value = formData.bankname
+            document.getElementById('accountname').value = formData.accountname
+            document.getElementById('accountnumber').value = formData.accountnumber
+            document.getElementById('branchname').value = formData.branchname
+            document.getElementById('routingnumber').value = formData.routingnumber
+            document.getElementById('iban').value = formData.iban
+        }
+    }
+
+    // Clear form data function
+    function clearFormData() {
+        document.getElementById('companyname').value = '';
+        document.getElementById('companynameinArabic').value = '';
+        document.getElementById('phonenumber').value = '';
+        document.getElementById('Email').value = '';
+        document.getElementById('companyaddress').value = '';
+        document.getElementById('contactname').value = '';
+        document.getElementById('Webaddress').value = '';
+        document.getElementById('POBox').value = '';
+        document.getElementById('flag').value = '';
+        document.getElementById('bankname').value = '';
+        document.getElementById('accountname').value = '';
+        document.getElementById('accountnumber').value= '';
+        document.getElementById('branchname').value= '';
+        document.getElementById('routingnumber').value= '';
+        document.getElementById('iban').value= '';
+
+        // Clear data from localStorage
+        localStorage.removeItem('formData');
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', (event) => {
+        loadFormData();
+        document.querySelector('.btn.save').addEventListener('click', saveFormData);
+        document.querySelector('.btn.cancel').addEventListener('click', clearFormData);
+    });
+
+    function submitForm() {
+        // Perform form validation or data processing here
+
+        // Display a confirmation message with a resubmit button
+        const confirmationMessage = document.createElement('div');
+        confirmationMessage.innerHTML = `
+            <p>Thank you for submitting the form. We will get back to you soon!</p>
+            <button onclick="prepareForResubmission()" class="btn resubmit">Submit Another Response</button>
+        `;
+        confirmationMessage.className = 'confirmation-message';
+
+        document.body.appendChild(confirmationMessage);
+
+        // Hide the form
+        document.querySelector('.form-container').style.display = 'none';
+
+        // Smooth scroll to top if needed
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Prevent form from actually submitting for demonstration
+        return false; // Remove this line in real implementation
+    }
+
+    function prepareForResubmission() {
+        // Clear the confirmation message
+        document.querySelector('.confirmation-message').remove();
+
+        // Show the form again
+        document.querySelector('.form-container').style.display = 'block';
+
+        // Clear the form for a new submission
+        clearFormData();
+    }
+
+    function clearFormData() {
+        document.getElementById('companyname').value = '';
+        document.getElementById('companynameinArabic').value = '';
+        document.getElementById('phonenumber').value = '';
+        document.getElementById('Email').value = '';
+        document.getElementById('companyaddress').value = '';
+        document.getElementById('contactname').value = '';
+        document.getElementById('Webaddress').value = '';
+        document.getElementById('POBox').value = '';
+        document.getElementById('flag').value = '';
+        document.getElementById('bankname').value = '';
+        document.getElementById('accountname').value = '';
+        document.getElementById('accountnumber').value= '';
+        document.getElementById('branchname').value= '';
+        document.getElementById('routingnumber').value= '';
+        document.getElementById('iban').value= '';
+
+        // Optionally clear localStorage if needed
+        localStorage.removeItem('formData');
+    }
+
+    // Attach the submitForm function to the form's submit event
+    document.querySelector('.account-opening-form').onsubmit = submitForm;
+</script>
+
+</div>
+    <footer>
+       <p>&copy; 2023 Your Bank. All rights reserved.</p>
+    </footer>
+</body>
+</html>
