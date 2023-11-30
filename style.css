@@ -154,7 +154,6 @@ footer {
 /* Dropdown Button */
 .dropbtn {
     color: white;
-    padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -210,8 +209,7 @@ footer {
 /* Existing styles */
 
 /* Nested Dropdown Button */
-.dropdown .dropbtn {
-    background-color: #004d4d;
+.dropdown2 .dropbtn {
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -220,7 +218,7 @@ footer {
 }
 
 /* Nested Dropdown content */
-.dropdown .dropdown-content {
+.dropdown2 .dropdown-content2 {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -232,23 +230,23 @@ footer {
 }
 
 /* Change color of nested dropdown links on hover */
-.dropdown .dropdown-content a:hover {
+.dropdown2 .dropdown-content2 a:hover {
     background-color: #f1f1f1;
 }
 
 /* Show the nested dropdown content on hover */
-.dropdown:hover .dropdown-content {
+.dropdown2:hover .dropdown-content2 {
     display: block;
 }
 
 /* Style the nested dropdown link */
-.dropdown-content .dropdown:hover .dropbtn {
+.dropdown-content2 .dropdown2:hover {
     background-color: #003d3d;
 }
 
 /* Responsive adjustments as necessary */
 @media (max-width: 768px) {
-    .dropdown .dropdown-content {
+    .dropdown2 .dropdown-content2 {
         position: static; /* Dropdown content in full width for mobile */
     }
 }
