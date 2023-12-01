@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Products Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-actions {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Buttons */
+.form-actions .btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.submit {
+    background-color: #0538c5ad;
+    color: white;
+}
+
+.save {
+    background-color: rgb(54, 248, 54);
+    color: white;
+}
+
+.cancel {
+    background-color: red;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+           <div class="logo">
+               <img src="bank-logo.png" alt="Your Bank Logo">
+               <h1>Your Bank</h1>
+           </div>
+           <ul class="nav-menu">
+               <li><a href="index.html">Home</a></li>
+               <li><a href="accounts.html">Account</a></li>
+               <li class="dropdown">
+                   <a href="Insurance.html" class="dropbtn">Insurance</a>
+                   <div class="dropdown-content">
+                       <a href="insurance-companies-info.html">Insurance Companies Info</a>
+                       <a href="insurance-products.html">Insurance Products</a>
+                       <div class="dropdown2">
+                           <a href="openpolicyissuance.html" class="dropbtn2">Policy Issuance</a>
+                           <div class="dropdown-content2">
+                               <a href="basic-policy-issuance.html">Basic Policy Issuance</a>
+                               <a href="motor-insurance-specifics.html">Motor Insurance Specifics</a>
+                               <a href="fire-insurance-specifics.html">Fire Insurance Specifics</a>
+                               <a href="medical-life-insurance-specifics.html">Medical and Life Insurance Specifics</a>
+                           </div>
+                       </div>
+                       <a href="policy-delivery.html">Policy Delivery</a>
+                       <a href="cancel-policy.html">Cancel Policy</a>
+                       <a href="claims-history.html">Claims History</a>
+                       <a href="policy-renewal.html">Policy Renewal</a>
+                   </div>
+               </li>
+               <li><a href="contact.html">Contact</a></li>
+               <li><a href="about.html">About Us</a></li>
+           </ul>
+       </nav>
+   </header>
+   <div class="main-content">
+    <div class="container">
+        <h1>Insurance Products Support Form</h1>
+        <form id="insuranceForm">
+            <fieldset>
+                <legend>Insurance Products:</legend>
+                <label for="motor">Motor</label>
+                <input type="checkbox" id="motor" name="motor">
+                
+                <label for="medical">Medical</label>
+                <input type="checkbox" id="medical" name="medical">
+                
+                <label for="life">Life</label>
+                <input type="checkbox" id="life" name="life">
+                
+                <!-- Repeat for other products -->
+            </fieldset>
+            
+            <fieldset>
+                <legend>Define New Insurance Products/Packages:</legend>
+                <label for="newPolicy">Completely New (New Policy)</label>
+                <input type="radio" id="newPolicy" name="productType">
+                
+                <label for="renewalPolicy">Starting from an Existing Product (Renewal Policy)</label>
+                <input type="radio" id="renewalPolicy" name="productType">
+            </fieldset>
+            
+            <fieldset>
+                <legend>Product Parameterization Model:</legend>
+                <textarea id="parameterizationModel" name="parameterizationModel" rows="4"></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Brokerage Fees Calculation:</legend>
+                <label for="perProduct">Per Product Per Insurance Company</label>
+                <input type="radio" id="perProduct" name="brokerageFees">
+                
+                <label for="standard">Standard Across All Products</label>
+                <input type="radio" id="standard" name="brokerageFees">
+            </fieldset>
+            
+            <fieldset>
+                <legend>Modify Terms of Existing Products:</legend>
+                <textarea id="modifyTerms" name="modifyTerms" rows="4"></textarea>
+            </fieldset>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn submit">Submit</button>
+                <button type="button" class="btn save">Save</button>
+                <button type="button" class="btn cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+   </div>
+    <script>
+        document.getElementById('insuranceForm').addEventListener('submit', function(event){
+            event.preventDefault(); // Prevent the default form submission
+            // Here you would typically gather form data and send it to a server
+            alert('Form submitted!'); // Mock submission response
+        });
+    
+        document.querySelector('.cancel').addEventListener('click', function(){
+            if(confirm('Are you sure you want to cancel? All data will be lost.')) {
+                document.getElementById('insuranceForm').reset(); // Reset the form
+            }
+        });
+    
+        document.querySelector('.save').addEventListener('click', function(){
+            // Here you would typically save the form data
+            alert('Data saved!'); // Mock save response
+        });
+    
+        // Validation for numeric and non-numeric input fields
+        function validateInput(event, isNumeric) {
+            const value = event.target.value;
+            if (isNumeric && isNaN(value)) {
+                alert('Please enter a numeric value.');
+                event.target.value = value.replace(/\D+/, ''); // Remove non-digits
+            } else if (!isNumeric && /\d/.test(value)) {
+                alert('Please enter a non-numeric value.');
+                event.target.value = value.replace(/\d+/, ''); // Remove digits
+            }
+        }
+    
+        // Example of adding validation to a field
+        document.getElementById('parameterizationModel').addEventListener('input', function(event){
+            validateInput(event, false); // For non-numeric input
+        });
+    
+        // Extend this concept to other fields as necessary
+    </script>
+    
+    <footer>
+        <p>&copy; 2023 Your Bank. All rights reserved.</p>
+     </footer>
+</body>
+</html>

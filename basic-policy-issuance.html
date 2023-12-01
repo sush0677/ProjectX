@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section h2 {
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+    .form-actions {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Buttons */
+.form-actions .btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.submit {
+    background-color: #0538c5ad;
+    color: white;
+}
+
+.save {
+    background-color: rgb(54, 248, 54);
+    color: white;
+}
+
+.cancel {
+    background-color: red;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+</style>
+<body>
+    <header>
+    <nav class="navbar">
+       <div class="logo">
+           <img src="bank-logo.png" alt="Your Bank Logo">
+           <h1>Your Bank</h1>
+       </div>
+       <ul class="nav-menu">
+           <li><a href="index.html">Home</a></li>
+           <li><a href="accounts.html">Account</a></li>
+           <li class="dropdown">
+               <a href="Insurance.html" class="dropbtn">Insurance</a>
+               <div class="dropdown-content">
+                   <a href="insurance-companies-info.html">Insurance Companies Info</a>
+                   <a href="insurance-products.html">Insurance Products</a>
+                   <div class="dropdown2">
+                       <a href="openpolicyissuance.html" class="dropbtn2">Policy Issuance</a>
+                       <div class="dropdown-content2">
+                           <a href="basic-policy-issuance.html">Basic Policy Issuance</a>
+                           <a href="motor-insurance-specifics.html">Motor Insurance Specifics</a>
+                           <a href="fire-insurance-specifics.html">Fire Insurance Specifics</a>
+                           <a href="medical-life-insurance-specifics.html">Medical and Life Insurance Specifics</a>
+                       </div>
+                   </div>
+                   <a href="policy-delivery.html">Policy Delivery</a>
+                   <a href="cancel-policy.html">Cancel Policy</a>
+                   <a href="claims-history.html">Claims History</a>
+                   <a href="policy-renewal.html">Policy Renewal</a>
+               </div>
+           </li>
+           <li><a href="contact.html">Contact</a></li>
+           <li><a href="about.html">About Us</a></li>
+       </ul>
+   </nav>
+</header>
+<div class="main-content">
+<div class="container">
+    <h1>Insurance Management System</h1>
+    <form id="insuranceRequirementsForm">
+        <!-- Section for entering basic insurance requirements -->
+        <section class="form-section">
+            <h2>Basic Insurance Requirements</h2>
+            <label for="insuranceType">Insurance Type:</label>
+            <select id="insuranceType" name="insuranceType">
+                <option value="motor">Motor</option>
+                <option value="health">Health</option>
+                <!-- Add other insurance types here -->
+            </select>
+            <button type="button" id="generateOfferings">Generate Offerings</button>
+        </section>
+
+        <!-- Section for displaying and selecting insurance offerings -->
+        <section class="form-section" id="offeringsSection">
+            <h2>Insurance Offerings</h2>
+            <!-- Dynamic list of offerings will be generated here -->
+            <div id="offeringsList">
+                <!-- Placeholder for offerings -->
+            </div>
+            <button type="button" id="printOfferings">Print Offerings</button>
+        </section>
+
+        <!-- Section for amending offer details -->
+        <section class="form-section">
+            <h2>Amend Offer Details</h2>
+            <label for="amendedDetails">Amend Details:</label>
+            <textarea id="amendedDetails" name="amendedDetails" rows="4"></textarea>
+        </section>
+
+        <!-- Section for proposal generation -->
+        <section class="form-section">
+            <h2>Proposal Generation</h2>
+            <label for="customerDetails">Customer Details:</label>
+            <input type="text" id="customerDetails" name="customerDetails">
+            <button type="button" id="printProposal">Print Proposal</button>
+        </section>
+
+        <!-- Payment processing -->
+        <section class="form-section">
+            <h2>Payment Processing</h2>
+            <label for="paymentAmount">Amount:</label>
+            <input type="number" id="paymentAmount" name="paymentAmount">
+            <button type="button" id="processPayment">Process Payment</button>
+        </section>
+
+        <!-- Policy document generation -->
+        <section class="form-section">
+            <h2>Policy Document Generation</h2>
+            <button type="button" id="generatePolicyDocument">Generate Document</button>
+        </section>
+
+        <!-- Additional sections for other functionalities can be added here -->
+
+        <div class="form-actions">
+            <button type="submit" class="btn submit">Submit</button> 
+            <button type="button" class="btn save">Save</button>
+            <button type="button" class="btn cancel">Cancel</button>
+        </div>
+    </form>
+</div>
+</div>
+<script>
+    // Save functionality (for demonstration purposes, it will just alert)
+    document.querySelector('.save').addEventListener('click', function() {
+      alert('Information saved!');
+      // In a real-world scenario, here you would handle the data storage
+    });
+  
+    // Cancel functionality: Resets the form
+    document.querySelector('.cancel').addEventListener('click', function() {
+      if (confirm('Are you sure you want to cancel all changes?')) {
+        document.getElementById('insuranceRequirementsForm').reset();
+      }
+    });
+  
+    // Submit functionality: Checks required fields and prevents submission if conditions are not met
+    document.getElementById('insuranceRequirementsForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Check for required field validations here
+      // For instance, if 'insuranceType' is required, check if it's selected
+      if (!document.getElementById('insuranceType').value) {
+        alert('Please select an insurance type.');
+        return;
+      }
+      
+      // If all validations pass, you can proceed to submit the form
+      // For demonstration, we'll just show an alert
+      alert('Form submitted!');
+      // Here, you would typically send form data to a server or process it as needed
+    });
+  
+    // Input validation function
+    function validateInput(event, requiresNumeric) {
+      const input = event.target;
+      const value = input.value;
+      
+      if (requiresNumeric && isNaN(value)) {
+        alert('Please enter a numeric value.');
+        input.value = ''; // Clear the invalid input
+      } else if (!requiresNumeric && /[\d]+/.test(value)) {
+        alert('Numeric input is not allowed here.');
+        input.value = ''; // Clear the invalid input
+      }
+    }
+  
+    // Apply validation to input fields
+    document.getElementById('paymentAmount').addEventListener('input', function(event) {
+      validateInput(event, true); // True because 'paymentAmount' requires numeric input
+    });
+  
+    // For text inputs where numeric values are not required, you would attach the validateInput function with 'false' as the second parameter
+    // Example:
+    // document.getElementById('customerDetails').addEventListener('input', function(event) {
+    //   validateInput(event, false); // False because 'customerDetails' should not contain numeric input
+    // });
+  
+    // Extend this concept to other fields as necessary
+  </script>
+  
+<footer>
+    <p>&copy; 2023 Your Bank. All rights reserved.</p>
+ </footer>
+</body>
+</html>
