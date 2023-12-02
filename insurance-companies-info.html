@@ -9,7 +9,7 @@
     <style>
 /* Form Container */
 .form-container {
-    max-width: 750px; /* Adjusted for better spacing */
+    max-width: 850px; /* Adjusted for better spacing */
     margin: 20px auto;
     padding: 20px;
     background-color: #f4f4f4;
@@ -40,7 +40,7 @@
 }
 
 .form-group.double label {
-    min-width: 120px; /* Minimum width for all labels */
+    width: 180px; /* Minimum width for all labels */
     margin-right: 10px; /* Space between label and input */
     color: black;
 }
@@ -88,17 +88,17 @@
 }
 
 .submit {
-    background-color: #0538c5ad;
+    background-color: #34568B;
     color: white;
 }
 
 .save {
-    background-color: rgb(54, 248, 54);
+    background-color: #80CBC4;
     color: white;
 }
 
 .cancel {
-    background-color: red;
+    background-color: #f49a9ac7;
     color: white;
 }
 
@@ -156,38 +156,37 @@
     <div class="main-content">
         <main>
             <div class="form-container">
-                <h3 class="form-title">Maintain, at a minimum, the following information per company:
-                </h3>
+                <h3 class="form-title">Information of Companies Insurance:</h3>
                 <form class="account-opening-form">
                     <div class="form-group double">
                         <div>
-                            <label for="companyname">company name:</label>
+                            <label for="companyname">Company name:</label>
                             <input type="text" id="companyname" name="companyname" placeholder="kiya" required>
                         </div>
                         <div>
-                            <label for="companynameinArabic">company name:</label>
+                            <label for="companynameinArabic">Company name[Arabic]:</label>
                             <input type="text" id="companynameinArabic" name="companynameinArabic" placeholder="company name in Arabic" required>
                         </div>
                     </div>
 
                     <div class="form-group double">
                         <div>
-                            <label for="phonenumber">phone number:</label>
+                            <label for="phonenumber">Phone number:</label>
                             <input type="tel" id="phonenumber" name="phonenumber" placeholder="e.g., 97105123456" required>
                         </div>
                         <div>
-                            <label for="faxnumber">fax number:</label>
+                            <label for="faxnumber">Fax number:</label>
                             <input type="tel" id="faxnumber" name="faxnumber" placeholder="e.g., 97105123456" required>
                         </div>
                     </div>
 
                     <div class="form-group double">
                         <div>
-                            <label for="contactname">contact name:</label>
+                            <label for="contactname">Contact name:</label>
                             <input type="text" id="contactname" name="contactname" placeholder="contact name (relationship manager)" required>
                         </div>
                         <div>
-                            <label for="companyaddress">company address:</label>
+                            <label for="companyaddress">Company address:</label>
                             <input type="text" id="companyaddress" name="companyaddress" placeholder="Dubai" required>
                         </div>
                     </div>
@@ -209,7 +208,7 @@
                             <input type="number" id="POBox" name="POBox" placeholder="Enter P.O.Box" required>
                         </div>
                         <div>
-                            <label for="flag">active/inactive flag:</label>
+                            <label for="flag"> Flag:</label>
                             <select id="flag" name="flag" required>
                                 <option value="flag1">active</option>
                                 <option value="flag2">inactive</option>
