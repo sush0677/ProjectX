@@ -7,30 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-.container {
-    max-width: 960px;
+.form-container {
+    max-width: 850px; /* Adjusted for better spacing */
     margin: 20px auto;
     padding: 20px;
+    background-color: #f4f4f4;
     color: #000;
-    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Form Sections */
-.form-section h2 {
-    color: black;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 15px;
+/* Form Title */
+.form-title {
+    text-align: center;
+    color: #333;
 }
 
-/* Form Groups */
+/* Form Group for Inline Fields */
 .form-group.double {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; /* Ensure wrapping on smaller screens */
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 /* Labels and Inputs */
@@ -38,19 +36,24 @@
     display: flex;
     align-items: center;
     margin-right: 10px; /* Space between fields */
-    flex: 1 1 40%; /* Adjust to control the size of the input and label */
+    flex: 1 1 45%; /* Adjust to control the size of the input and label */
 }
 
 .form-group.double label {
-    min-width: 120px; /* Minimum width for all labels */
+    width: 180px; /* Minimum width for all labels */
     margin-right: 10px; /* Space between label and input */
     color: black;
+}
+
+.form-group.double textarea{
+    width: 653px;
+    color: #000;
 }
 
 .form-group.double input,
 .form-group.double select {
     flex: 1; /* Take up remaining space */
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -64,44 +67,43 @@
     .form-group.double > div {
         margin-right: 0; /* Remove margin between stacked fields */
     }
+
+    .form-group.double label,
+    .form-group.double input,
+    .form-group.double select {
+        flex: none;
+        width: 100%; /* Full width on small screens */
+    }
 }
 
-/* Inputs and Textareas */
-input[type="text"],
-input[type="number"],
-input[type="date"],
-textarea {
-    min-width: 150px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-/* Action Buttons */
+/* Form Actions Styling */
 .form-actions {
     text-align: center;
     padding-top: 20px;
 }
 
+/* Buttons */
 .form-actions .btn {
     padding: 10px 20px;
-    margin: 0 5px;
+    margin: 0 10px;
     border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .submit {
-    background-color: #0538c5ad;
+    background-color: #34568B;
     color: white;
 }
 
 .save {
-    background-color: rgb(54, 248, 54);
+    background-color: #80CBC4;
     color: white;
 }
 
 .cancel {
-    background-color: red;
+    background-color: #f49a9ac7;
     color: white;
 }
 
@@ -147,71 +149,62 @@ textarea {
        </nav>
     </header>
     <div class="main-content">
-    <div class="container">
+    <div class="form-container">
         <h1>Vehicle Database Management</h1>
         <form id="vehicleManagementForm">
-            <!-- Vehicle Information Section -->
-            <section class="form-section">
-                <h2>Vehicle Information</h2>
-                <div class="form-group double">
+            <div class="form-group double">
+                <div>
                     <label for="make">Make:</label>
                     <input type="text" id="make" name="make" placeholder="e.g., Toyota">
-                    
+                </div>
+                <div>
                     <label for="type">Type:</label>
                     <input type="text" id="type" name="type" placeholder="e.g., Sedan">
                 </div>
-                <div class="form-group double">
+            </div>
+            <div class="form-group double">
+                <div>
                     <label for="bodyType">Body Type:</label>
                     <input type="text" id="bodyType" name="bodyType" placeholder="e.g., Convertible">
-                    
+                </div>
+                <div>
                     <label for="engineCapacity">Engine Capacity:</label>
                     <input type="number" id="engineCapacity" name="engineCapacity" placeholder="e.g., 2000">
                 </div>
-                <div class="form-group double">
+            </div>
+
+            <div class="form-group double">
+                <div>
                     <label for="modelYear">Model Year:</label>
                     <input type="number" id="modelYear" name="modelYear" placeholder="e.g., 2020">
-                    
+                </div>    
+                <div>
                     <label for="seatingCapacity">Seating Capacity:</label>
                     <input type="number" id="seatingCapacity" name="seatingCapacity" placeholder="e.g., 5">
                 </div>
-            </section>
-        <!-- Fleet Policy Section -->
-        <section>
-            <h2>Fleet Policy Management</h2>
-            <form id="fleetPolicyForm">
-                <!-- Fleet policy information inputs -->
-                <!-- ... -->
-                <button type="submit">Create Fleet Policy</button>
-            </form>
-        </section>
+            </div>
+        
         
         <!-- Survey Scheduling Section -->
-        <section>
-            <h2>Survey Scheduling</h2>
-            <form id="surveyForm">
+        <div class="form-group double">
+            <div>
+                <label for="surveyDate">Survey Date:</label>
                 <input type="date" id="surveyDate" name="surveyDate" placeholder="Survey Date">
+            </div>
+            <div>
+                <label for="surveyDetails">Survey Details:</label>
                 <input type="text" id="surveyDetails" name="surveyDetails" placeholder="Survey Details">
-                <!-- ... -->
-                <button type="submit">Schedule Survey</button>
-            </form>
-        </section>
-        
-        <!-- Claim Report Section -->
-        <section>
-            <h2>Claim Report History</h2>
-            <form id="claimReportForm">
-                <!-- Claim report inputs -->
-                <!-- ... -->
-                <button type="submit">Submit Claim Report</button>
-            </form>
-        </section>
+            </div>
+        </div>
         
         <!-- Notes Section -->
-        <section>
-            <h2>Policy Notes</h2>
-            <textarea id="policyNotes" name="policyNotes" placeholder="Enter notes here..."></textarea>
-            <button type="submit">Add Note</button>
-        </section>
+        <div class="form-group double">
+            <div>
+            <label for="policyNotes">Policy Notes:</label>
+            <textarea id="policyNotes" name="policyNotes" placeholder="Enter notes here..." rows="4"></textarea>
+            </div>
+        </div>
+
         <div class="form-actions">
             <button type="submit" class="btn submit">Submit</button> 
             <button type="button" class="btn save">Save</button>
