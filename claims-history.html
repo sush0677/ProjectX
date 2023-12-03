@@ -149,7 +149,7 @@
     </header>
 <div class="main-content">
     <div class="form-container">
-        <h1>Claims History</h1>
+        <h1 class="form-title">Claims History</h1>
         <div class="form-group double">
             <div>
                 <label for="policyNumber">Policy Number:</label>
@@ -164,7 +164,7 @@
         <div class="form-group double">
             <div>
                 <label for="claimDetails">Enter Claim Details:</label>
-                <textarea id="claimDetails" name="claimDetails" placeholder="Enter details of the claim..."></textarea>
+                <textarea id="claimDetails" name="claimDetails"></textarea>
             </div>
             <div>
                 <label for="claimAmount">Claim Amount:</label>
@@ -177,7 +177,7 @@
                 <input type="file" id="claimsImport" name="claimsImport" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" required>
             </div>
             <div>
-                <label for="alertSetup">Enable Alerts on Renewal:</label>
+                <label for="alertSetup">Enable Alerts on Renewal</label>
                 <input type="checkbox" id="alertSetup" name="alertSetup">
             </div>
         
@@ -190,6 +190,56 @@
         
     </div>
 </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to save form data to local storage
+            function saveFormData() {
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value });
+            localStorage.setItem(localStorageKey, JSON.stringify(data));
+            alert('Form data saved!');
+        }
+
+        // Function to load form data from local storage
+        function loadFormData() {
+            const savedData = JSON.parse(localStorage.getItem(localStorageKey));
+            if (savedData) {
+                Object.entries(savedData).forEach(([key, value]) => {
+                    const element = form.elements[key];
+                    if (element) element.value = value;
+                });
+            }
+        }
+
+        // Load form data on page load
+        loadFormData();
+
+        // Save button functionality
+        document.querySelector('.btn.save').addEventListener('click', function(event) {
+            event.preventDefault();
+            saveFormData();
+        });
+
+        // Cancel button functionality
+        document.querySelector('.btn.cancel').addEventListener('click', function() {
+            form.reset();
+            localStorage.removeItem(localStorageKey);
+        });
+
+        // Submit button functionality
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual submit
+
+            // Handle submission logic here (e.g., send data to server)
+            alert('Form submitted!');
+
+            // Clear local storage and form for next submission
+            localStorage.removeItem(localStorageKey);
+            form.reset();
+        });
+    });
+    </script>
     <footer>
         <p>&copy; 2023 Your Bank. All rights reserved.</p>
      </footer>
