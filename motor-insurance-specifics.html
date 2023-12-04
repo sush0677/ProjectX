@@ -44,7 +44,7 @@
     <div class="main-content">
     <div class="form-container">
         <h1 class="form-title">Motor Insurance Specifics</h1>
-        <form id="insuranceRequirementsForm">
+        <form id="account-opening-form">
             <div class="form-group double">
                 <div>
                     <label for="make">Make:</label>
@@ -106,63 +106,7 @@
         </form>
     </div>
     </div>
-    <script>
-        // Function to validate numeric input
-        function validateNumericInput(event) {
-          if (isNaN(event.target.value)) {
-            alert('Please enter a numeric value.');
-            event.target.value = ''; // Clear the invalid input
-          }
-        }
-      
-        // Function to validate non-numeric input
-        function validateAlphaInput(event) {
-          if (!/^[a-zA-Z ]*$/i.test(event.target.value)) {
-            alert('Please enter only alphabets.');
-            event.target.value = ''; // Clear the invalid input
-          }
-        }
-      
-        // Save action
-        function saveForm() {
-          // Implement save logic here (e.g., save to localStorage or send to server)
-          alert('Form data saved (placeholder function).');
-        }
-      
-        // Cancel action
-        function cancelForm() {
-          if (confirm('Are you sure you want to cancel? All unsaved changes will be lost.')) {
-            // Reset the form or revert to the last saved state
-            document.getElementById('vehicleManagementForm').reset();
-          }
-        }
-      
-        // Submit action
-        function submitForm() {
-          // Implement submit logic here (e.g., send data to server)
-          alert('Form submitted (placeholder function).');
-          // Prevent form from submitting if you need to do more processing
-          // event.preventDefault();
-        }
-      
-        // Attach event listeners to form fields for input validation
-        window.onload = function() {
-          document.getElementById('engineCapacity').addEventListener('input', validateNumericInput);
-          document.getElementById('modelYear').addEventListener('input', validateNumericInput);
-          document.getElementById('seatingCapacity').addEventListener('input', validateNumericInput);
-          document.getElementById('make').addEventListener('input', validateAlphaInput);
-          document.getElementById('type').addEventListener('input', validateAlphaInput);
-      
-          // Attach event listeners to buttons
-          document.querySelector('.save').addEventListener('click', saveForm);
-          document.querySelector('.cancel').addEventListener('click', cancelForm);
-          document.getElementById('vehicleManagementForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            submitForm();
-          });
-        };
-      </script>
-      
+    <script src="script.js"></script>  
     <footer>
         <p>&copy; 2023 Your Bank. All rights reserved.</p>
      </footer>

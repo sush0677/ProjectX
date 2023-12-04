@@ -45,7 +45,7 @@
         <main>
             <div class="form-container">
                 <h1 class="form-title">Policy delivery</h1>
-                <form class="Insurance-opening-form">
+                <form class="account-opening-form">
                     <div class="form-group double">
                         <div>
                             <label for="deliverydate">Delivery Date:</label>
@@ -99,72 +99,7 @@
             </div>
         </main>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.querySelector('.Insurance-opening-form');
-        const inputWhoDelivered = document.getElementById('whodelivered');
-        const inputWhoReceived = document.getElementById('whoreceived');
-        const localStorageKey = 'formSaveData';
-
-        // Validate input for alphabets only
-        function validateAlphabetsOnly(input) {
-            input.addEventListener('input', function() {
-                this.value = this.value.replace(/[^a-zA-Z\s]+/, '');
-            });
-        }
-
-        validateAlphabetsOnly(inputWhoDelivered);
-        validateAlphabetsOnly(inputWhoReceived);
-
-        // Function to save form data to local storage
-        function saveFormData() {
-            const formData = new FormData(form);
-            const data = {};
-            formData.forEach((value, key) => { data[key] = value });
-            localStorage.setItem(localStorageKey, JSON.stringify(data));
-            alert('Form data saved!');
-        }
-
-        // Function to load form data from local storage
-        function loadFormData() {
-            const savedData = JSON.parse(localStorage.getItem(localStorageKey));
-            if (savedData) {
-                Object.entries(savedData).forEach(([key, value]) => {
-                    const element = form.elements[key];
-                    if (element) element.value = value;
-                });
-            }
-        }
-
-        // Load form data on page load
-        loadFormData();
-
-        // Save button functionality
-        document.querySelector('.btn.save').addEventListener('click', function(event) {
-            event.preventDefault();
-            saveFormData();
-        });
-
-        // Cancel button functionality
-        document.querySelector('.btn.cancel').addEventListener('click', function() {
-            form.reset();
-            localStorage.removeItem(localStorageKey);
-        });
-
-        // Submit button functionality
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent actual submit
-
-            // Handle submission logic here (e.g., send data to server)
-            alert('Form submitted!');
-
-            // Clear local storage and form for next submission
-            localStorage.removeItem(localStorageKey);
-            form.reset();
-        });
-    });
-</script>
-
+    <script src="script.js"></script>
     <footer>
        <p>&copy; 2023 Your Bank. All rights reserved.</p>
     </footer>

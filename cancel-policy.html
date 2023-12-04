@@ -45,7 +45,7 @@
         <main>
             <div class="form-container">
                 <h1 class="form-title"> Policy cancellation</h1>
-                <form class="Insurance-opening-form">
+                <form class="account-opening-form">
                     <div class="form-group double">
                         <div>
                             <label for="cancellationdate">Cancellation Date:</label>
@@ -75,67 +75,7 @@
         </main>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.querySelector('.Insurance-opening-form');
-            const localStorageKey = 'insuranceCancellationFormData';
-    
-            // Save Function
-            function saveFormData() {
-                const formData = new FormData(form);
-                const data = {};
-                formData.forEach((value, key) => { data[key] = value });
-                localStorage.setItem(localStorageKey, JSON.stringify(data));
-                alert('Cancellation details saved!');
-            }
-    
-            // Load Function
-            function loadFormData() {
-                const savedData = JSON.parse(localStorage.getItem(localStorageKey));
-                if (savedData) {
-                    Object.entries(savedData).forEach(([key, value]) => {
-                        if (form.elements[key]) form.elements[key].value = value;
-                    });
-                }
-            }
-    
-            // Load saved data when the page is loaded
-            loadFormData();
-    
-            // Alphabetic Validation
-            function validateAlphabeticInput(event) {
-                if (!event.key.match(/[a-zA-Z\s]/)) {
-                    event.preventDefault();
-                    alert('Only alphabetic characters are allowed here.');
-                }
-            }
-    
-            // Attaching validation function to the 'cancelled by' field
-            document.getElementById('cancelledby').addEventListener('keypress', validateAlphabeticInput);
-    
-            // Save button functionality
-            document.querySelector('.btn.save').addEventListener('click', function(event) {
-                event.preventDefault();
-                saveFormData();
-            });
-    
-            // Cancel button functionality
-            document.querySelector('.btn.cancel').addEventListener('click', function() {
-                form.reset();
-                localStorage.removeItem(localStorageKey);
-                alert('Form data cleared!');
-            });
-    
-            // Submit button functionality
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-                alert('Cancellation details submitted!');
-                // Here, you can add code to handle the form data, e.g., send it to a server
-                form.reset();
-                localStorage.removeItem(localStorageKey);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
     
     <footer>
        <p>&copy; 2023 Your Bank. All rights reserved.</p>
