@@ -279,6 +279,44 @@ footer {
     width: 100%; /* Ensure full width */
 }
 
+.checkbox-group, .radio-group {
+    margin-bottom: 15px; /* Consistent with .form-group.double */
+    padding-left: 180px; /* Aligns with the labels of other form elements */
+}
+
+.checkbox-group label, .radio-group label {
+    display: block; /* Each label on a new line */
+    margin-bottom: 10px; /* Spacing between each option */
+    cursor: pointer; /* Indicates that the element is clickable */
+    font-size: 1em; /* Consistent font size with other form elements */
+    color: black; /* Consistent text color */
+}
+
+.checkbox-group label input[type="checkbox"],
+.radio-group label input[type="radio"] {
+    margin-right: 10px; /* Spacing between checkbox/radio button and label text */
+}
+
+.file-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.file-group label {
+    min-width: 180px;
+    margin-right: 10px;
+    color: black;
+}
+
+.file-group input[type="file"] {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 4px;
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .form-group.double {
@@ -308,6 +346,13 @@ footer {
     .form-actions .btn {
         padding: 12px 24px;
     }
+    .checkbox-group, .radio-group {
+        padding-left: 0;
+    }
+
+    .checkbox-group label, .radio-group label {
+        font-size: 14px; /* Smaller font size for better readability */
+    }
 }
 
 @media (max-width: 480px) {
@@ -324,6 +369,9 @@ footer {
 
     .form-actions .btn {
         padding: 15px 30px;
+    }
+    .checkbox-group label, .radio-group label {
+        font-size: 12px; /* Even smaller font size for tiny screens */
     }
 }
 

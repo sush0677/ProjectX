@@ -98,23 +98,20 @@
                 <button type="button" id="printAll">Print All Notices</button>
             </div>
             <!-- Transmission methods -->
-            <div class="form-group double">
-                <legend>Transmission of Notices:</legend>
-                   <div>
-                        <input type="checkbox" id="fax" name="transmissionMethod" value="fax">
-                        <label for="fax">Fax</label>
+                   <div class="form-group double">
+                    <lable>Transmission of Notices:</label>
+                        <label><input type="checkbox" id="fax" name="transmissionMethod" value="fax">Fax</label>
                     
-                        <input type="checkbox" id="email" name="transmissionMethod" value="email">
-                        <label for="email">E-mail</label>
+                        <label><input type="checkbox" id="email" name="transmissionMethod" value="email">E-mail</label>
                 
-                        <input type="checkbox" id="sms" name="transmissionMethod" value="sms">
-                        <label for="sms">SMS</label>
+                        <label><input type="checkbox" id="sms" name="transmissionMethod" value="sms">SMS</label>
                    </div>
-            </div>
             <!-- Section for manual update of claims history -->
+            <div class="file-group">
                 <label for="claimsHistoryUpdate">Claims History Details:</label>
                 <input type="file" id="claimsHistoryImport" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
-            
+            </div>
+
             <div class="form-actions">
                 <button type="submit" class="btn submit">Submit</button> 
                 <button type="button" class="btn save">Save</button>
