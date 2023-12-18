@@ -281,7 +281,7 @@ footer {
 
 .checkbox-group, .radio-group {
     margin-bottom: 15px; /* Consistent with .form-group.double */
-    padding-left: 180px; /* Aligns with the labels of other form elements */
+     /* Aligns with the labels of other form elements */
 }
 
 .checkbox-group label, .radio-group label {
